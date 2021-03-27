@@ -7,10 +7,10 @@ public class TotalWeight {
         String str="EEDBCCAB";
         int[] weights={4, 3, 2, 1, 5};
 
-        totalWeight(str,weights);
+        System.out.println(totalWeight(str,weights));
     }
 
-     static void totalWeight(String str, int[] weights) {
+     static int totalWeight(String str, int[] weights) {
         HashMap<Character,Integer> hashMap=new HashMap<>();
 
 
@@ -25,6 +25,6 @@ public class TotalWeight {
          for (int i = 0; i <str.length() ; i++) {
              totalWeight+=hashMap.get(str.charAt(i));
          }
-         System.out.println(totalWeight);
+        return totalWeight;
     }
 }
