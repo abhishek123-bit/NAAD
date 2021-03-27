@@ -23,7 +23,7 @@ public class ModifyString {
                 throw new InvalidReplacementsException("replacement for a digit in s is not given in replacements string");
             }
         }
-        for (int i = 0; i <replacements.length() ; i+=2) {
+        for (int i = 1; i <replacements.length() ; i+=2) {
             if(replacements.charAt(i)-48>=0&&replacements.charAt(i)-48<=9){
                 throw new InvalidReplacementsException("replacements string is invalid");
             }
