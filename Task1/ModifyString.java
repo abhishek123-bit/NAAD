@@ -16,6 +16,9 @@ public class ModifyString {
        HashMap<Integer,Character> hashMap=new HashMap<>();
 
         for (int i = 0; i <replacements.length() ; i+=2) {
+            if(replacements.charAt(i)-48>=0&&replacements.charAt(i)-48<=9){
+                throw new InvalidReplacementsException("replacements string is invalid");
+            }
             hashMap.put(Integer.parseInt(""+replacements.charAt(i)),replacements.charAt(i+1));
         }
         for (int i = 0; i <str.length() ; i++) {
@@ -23,11 +26,7 @@ public class ModifyString {
                 throw new InvalidReplacementsException("replacement for a digit in s is not given in replacements string");
             }
         }
-        for (int i = 1; i <replacements.length() ; i+=2) {
-            if(replacements.charAt(i)-48>=0&&replacements.charAt(i)-48<=9){
-                throw new InvalidReplacementsException("replacements string is invalid");
-            }
-        }
+
 
         StringBuilder newStr= new StringBuilder();
         for (int i = 0; i <str.length() ; i++) {
