@@ -7,10 +7,10 @@ public class ModifyString {
         String str="12332321";
         String replacements="2R3S1T4D";
 
-        modifyString(str,replacements);
+        System.out.println(modifyString(str,replacements));
     }
 
-    static void modifyString(String str, String replacements) {
+    static String modifyString(String str, String replacements) {
 
        HashMap<Integer,Character> hashMap=new HashMap<>();
 
@@ -22,6 +22,6 @@ public class ModifyString {
         for (int i = 0; i <str.length() ; i++) {
                newStr.append(hashMap.get(Integer.parseInt("" + str.charAt(i))));
         }
-        System.out.println(newStr);
+        return newStr.toString();
     }
 }
